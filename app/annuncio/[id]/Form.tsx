@@ -81,7 +81,7 @@ const CandidaturaForm: React.FC<Props> = ({ annuncioId }) => {
 
       <form className="mt-6" onSubmit={formik.handleSubmit}>
         <div className="space-y-4">
-          <div className="flex space-x-4 md:space-x-8">
+          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-8">
             <Input
               name="nome"
               label="Nome"
@@ -101,7 +101,7 @@ const CandidaturaForm: React.FC<Props> = ({ annuncioId }) => {
             />
           </div>
 
-          <div className="flex space-x-4 md:space-x-8">
+          <div className="flex flex-col space-y-4 md:flex-row md:space-y-0 md:space-x-8">
             <Input
               name="telefono"
               label="Telefono Cellulare"
