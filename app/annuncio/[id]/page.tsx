@@ -15,7 +15,7 @@ interface RepartiResponse {
   data: Reparto[];
 }
 
-const Page = async ({ params }: any) => {
+const Page = async ({ params }: { params: { id: string } }) => {
   const { data } = await directusAPI.get<AnnuncoResponse>(
     `/items/annunci/${params.id}`
   );
@@ -47,5 +47,7 @@ const Page = async ({ params }: any) => {
     </main>
   );
 };
+
+export const revalidate = 0;
 
 export default Page;

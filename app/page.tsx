@@ -15,8 +15,6 @@ async function Annunci() {
     `/items/annunci?fields=id,annuncio&filter[status]=${Status.published}`
   );
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   return (
     <main className="max-w-5xl mx-auto px-4 lg:p-0 my-10">
       <Heading />
@@ -27,5 +25,7 @@ async function Annunci() {
     </main>
   );
 }
+
+export const revalidate = 0;
 
 export default Annunci;
