@@ -35,7 +35,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
       <Heading annuncio={data.data} reparto={reparto} />
 
       <div
-        className="mt-8"
+        className="mt-8 prose max-w-none"
         dangerouslySetInnerHTML={{ __html: data.data.descrizione_annuncio }}
       />
 
@@ -48,6 +48,7 @@ const Page = async ({ params }: { params: { id: string } }) => {
   );
 };
 
+// fa in modo che noon venga cache-ata la pagina, cosi' e' sempre dinamica
 export const revalidate = 0;
 
 export default Page;

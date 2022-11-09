@@ -15,6 +15,9 @@ async function Annunci() {
     `/items/annunci?fields=id,annuncio&filter[status]=${Status.published}`
   );
 
+  // solo per far vedere il loading, se no e' troppo fast
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
   return (
     <main className="max-w-5xl mx-auto px-4 lg:p-0 my-10">
       <Heading />
@@ -26,6 +29,7 @@ async function Annunci() {
   );
 }
 
+// fa in modo che noon venga cache-ata la pagina, cosi' e' sempre dinamica
 export const revalidate = 0;
 
 export default Annunci;
